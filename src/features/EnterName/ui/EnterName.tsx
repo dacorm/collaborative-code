@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import {useEffect, useRef} from 'react'
 import {
     Input,
     Button,
@@ -20,6 +20,14 @@ export const EnterName = () => {
         setUsername,
         setRoomId,
     }))
+    const id = location.pathname.replace('/', '');
+
+    useEffect(() => {
+        if (id !== '') {
+            setRoomId(id);
+            setUsername(`${Math.random()}`);
+        }
+    }, [id]);
 
     const { mutateAsync } = useMutation<any, any, any>(({ username, roomId, uri }) => {
         return axios.post(`http://localhost:3001/${uri}`, {

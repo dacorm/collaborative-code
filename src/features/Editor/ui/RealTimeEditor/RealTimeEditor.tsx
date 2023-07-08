@@ -10,10 +10,16 @@ import { createEditor, createWidget } from "@/features/Editor/model/createEditor
 import './RealtimeEditor.css';
 
 const RealTimeEditor = () => {
-    const { username, roomId } = useStore(({ username, roomId }) => ({
+    const { username, roomId } = useStore(({ username, roomId, setRoomId }) => ({
         username,
         roomId,
+        setRoomId
     }));
+    // const id = location.pathname.replace('/', '');
+    //
+    // useEffect(() => {
+    //     setRoomId(id);
+    // }, [id]);
 
     useEffect(() => {
         const editor = createEditor();
