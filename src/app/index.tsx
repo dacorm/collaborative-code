@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './styles/index.css'
-import {ChakraProvider} from "@chakra-ui/react";
-import {theme} from "@/shared";
+import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "@/shared";
 import { QueryClient, QueryClientProvider } from 'react-query'
 import {ReactQueryDevtools} from "react-query/devtools";
 
